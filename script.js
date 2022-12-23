@@ -15,7 +15,7 @@ const temp = document.getElementById("temp"),
   airQuality = document.querySelector(".air-quality"),
   airQualityStatus = document.querySelector(".air-quality-status"),
   visibilityStatus = document.querySelector(".visibility-status"),
-  weatherCards = document.querySelector("#weather-cards"),
+  weatherCards = document.querySelector("#weather-cards .row"),
   celciusBtn = document.querySelector(".celcius"),
   fahrenheitBtn = document.querySelector(".fahrenheit"),
   hourlyBtn = document.querySelector(".hourly"),
@@ -253,8 +253,14 @@ function updateForecast(data, unit, type) {
     numCards = 7;
   }
   for (let i = 0; i < numCards; i++) {
+    
+    let grid = document.createElement("div");
+    grid.classList.add("col-md-3");
+
     let card = document.createElement("div");
-    card.classList.add("card");
+    card.classList.add("card-items");
+    
+
     // hour if hourly time and day name if weekly
     let dayName = getHour(data[day].datetime);
     if (type === "week") {
@@ -271,17 +277,19 @@ function updateForecast(data, unit, type) {
       tempUnit = "°F";
     }
     card.innerHTML = `
-                      <h2 class="day-name">${dayName}</h2>
-                      <div class="card-icon">
-                        <img src="${iconSrc}" alt="" />
-                      </div>
-                      <div class="day-temp">
-                        <h2 class="temp">${dayTemp}</h2>
-                        <span class="temp-unit">${tempUnit}</span>
-                      </div>
-      
+                        <h2 class="day-name">${dayName}</h2>
+                        <div class="card-icon">
+                          <img src="${iconSrc}" alt="" />
+                        </div>
+                        <div class="day-temp">
+                          <h2 class="temp">${dayTemp}${tempUnit}</h2>
+                          
+                        </div>
+                     
                     `;
-    weatherCards.appendChild(card);
+    
+    weatherCards.appendChild(grid);
+    grid.appendChild(card);
     day++;
   }
 }
