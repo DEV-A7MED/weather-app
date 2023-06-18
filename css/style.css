@@ -141,7 +141,7 @@ img {
   padding: 20px 40px;
   position: relative;
   padding-bottom: 48px;
-  background-color: #f6f6f8;
+  background-color: #c0c0cb;
 }
 .main nav .row {
   display: flex;
@@ -189,10 +189,10 @@ nav .units button {
   padding: 10px 0;
   display: flex;
   flex-direction: column;
-  
+  margin-bottom: 10px;
 }
 .card-items h2 {
-  font-size: 15px;
+  font-size: 12px;
   font-weight: 600;
 }
 .card-items .card-icon {
@@ -223,6 +223,7 @@ nav .units button {
   padding: 10px 20px;
   display: flex;
   flex-direction: column;
+  margin-bottom: 10px;
 }
 .card2 .card-heading {
   color: #c2c2c2;
@@ -283,7 +284,7 @@ nav .options {
   gap: 5px;
 }
 .highlights .card2{
-  margin: 0 10px;
+  margin:  10px;
 }
 .card2 .card-heading{
   font-size: 18px;
